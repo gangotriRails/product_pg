@@ -1,0 +1,19 @@
+<div id="body">
+		<div class="container">
+<div class="last-products">
+				<h2>Last added products</h2>
+				
+				<section class="products">
+      <% @jewellary_items.each do |product| %>
+					<article>
+          <%= image_tag product.image ,  size: "200x200"%>
+						<h3> <%= product.name %></h3>
+            <h3><%= product.description%></h3>
+            <h4> <%= product.price %></h4>
+            <%= link_to 'Add to Cart', line_items_path(product_id: product),class: "btn-add" %>
+					</article>
+      <% end %>
+				</section>
+        </div>
+			</div>
+			</div>

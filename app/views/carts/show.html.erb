@@ -1,0 +1,46 @@
+<article>
+    <% if notice %>
+        <aside id="notice"><%= notice %></aside>
+    <% end %>
+<div id="body">
+		<div class="container">
+			<div id="content" class="full">
+				<div class="cart-table">
+					<table>
+						<tr>
+							<th class="items">Items</th>
+							<th class="price">Price</th>
+							<th class="qnt">Quantity</th>
+							<th class="total">Total</th>
+						</tr>
+    <% @cart.line_items.each do |line_item| %> 
+						<tr>
+							<td class="items">
+								<div class="image">
+                <%= image_tag line_item.product.image ,  size: "300x200"%>
+								</div>
+								<h3><a href="#"><%= line_item.product.name %></a></h3>
+								<p><%= line_item.product.description %></p>
+							</td>
+							<td class="price"><%= number_to_currency(line_item.product.price) %></td>
+							<td class="qnt"><%= line_item.quantity %></td>
+							<td class="total"><%= number_to_currency(line_item.total_price) %></td>
+						</tr>
+    <% end %> 
+					</table>
+				</div>
+				<div class="total-count">
+					<h3>Total to pay: <strong><%= number_to_currency(@cart.total_price) %></strong></h3>
+					<p>+shippment: $00.00</p>
+          </br>
+					<%= link_to "Let's go", api_v1_orders_url,method:"create", class: "btn btn-primary" %>
+					<a href="#" class="btn-grey">Finalize and pay</a>
+				<%= link_to 'Empty cart', @cart, class:"btn-grey" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+<button class="btn-grey" style="margin-left:10%;color:white"><%= link_to 'Back', gallery_index_url %></button>

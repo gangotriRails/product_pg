@@ -1,0 +1,63 @@
+<div class="register-photo">
+<div class="form-container">
+    <div class="image-holder" style="background-image: url(<%= asset_path '20.jpg' %>)"></div>
+<%= form_with(model: product) do |form| %>
+  <h2 class="text-center"><strong>Create</strong> a product.</h2>
+
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :metal %>
+    <%= form.text_field :metal ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :categories %>
+    <%= form.text_field :categories ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :price %>
+    <%= form.text_field :price ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description ,class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :color %>
+    <%= form.text_field :color,class:"form-control" %>
+  </div>
+  <div class="form-group">
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+</div>
+<div class="form-group">
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary btn-block" %>
+  </div>
+  </div>
+<% end %>
+
+     </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+

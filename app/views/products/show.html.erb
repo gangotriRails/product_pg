@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div style="margin-left:5%;">
+<section class="products">
+<article>
+<%= image_tag @product.image ,  size: "100x100"%>
+<ul>
+<li>Name : <%= @product.name %></li>
+<li> Price : <%= @product.price %></li>
+<li><%= link_to 'Show', @product %></li>
+<li><%= link_to 'Edit', edit_product_path(@product) %></li>
+<li><%= link_to 'Destroy',@product, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+</article>
+</section>
+</div>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path,class:"btn btn-primary btn-block"  %>

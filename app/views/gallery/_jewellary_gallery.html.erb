@@ -1,0 +1,22 @@
+</br>
+<table>
+<tr>
+<% count =0 %>
+<% @jewels.each do  |jewel| %>
+  <% if(count % 3) == 0 %>
+</tr>
+<tr>
+<% end %>
+<% count+= 1%>
+<td>
+<article>
+          <%= image_tag jewel.image ,  size: "200x200"%>
+						<h3> <%= jewel.name %></h3>
+            <h3><%= jewel.description%></h3>
+            <h4> <%= jewel.price %></h4>
+            <%= link_to 'Add to Cart', line_items_path(product_id: jewel),class: "btn-add" %>
+					</article>
+          </td>
+          <% end %>
+</tr>
+</table>

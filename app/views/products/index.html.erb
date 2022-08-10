@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+<br/>
+<div id="body">
+<div class="container">
+<div class="last-products">
+<h2><%= link_to 'Add New product', new_product_path %></h2>
+<h2>Products </h2>
+<section class="products">
+  <% @products.each do |product| %>
+      <article>
+      <%= image_tag product.image ,  size: "200x200"%>
+        <h3> <%= product.name %></h3>
+        <h3><%= product.description%></h3>
+        <h4> $<%= product.price %></h4>
+      </article>
+  <% end %>
+    </section>
+    </div>
+  </div>
+  </div>
+      
+<br>
+
+
