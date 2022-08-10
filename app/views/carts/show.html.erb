@@ -33,14 +33,20 @@
 					<h3>Total to pay: <strong><%= number_to_currency(@cart.total_price) %></strong></h3>
 					<p>+shippment: $00.00</p>
           </br>
-					<%= link_to "Let's go", api_v1_orders_url,method:"create", class: "btn btn-primary" %>
-					<a href="#" class="btn-grey">Finalize and pay</a>
-				<%= link_to 'Empty cart', @cart, class:"btn-grey" ,method: :delete, data: { confirm: 'Are you sure?' } %>
+
+					<%= form_with  url: "/orders/index", method: :post do |form| %>
+						<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+								data-key="pk_test_51LV6WeSCua8NIcc678QVkFcRcrg3aXxNomp5apmnFZ6NELrHZmmi6kZgKHwQLrG8jmPgVDHoZ3Dn49uBn9RRr6vm00rNFwyfHV"
+								data-description="Monthly subscription"
+								data-amount="100"
+								data-locale="auto">
+						</script>
+				<% end %>
+    </script>
 				</div>
 			</div>
 		</div>
 	</div>
 
-
-
+	<%= link_to 'Empty cart', @cart, class:"btn-grey" ,method: :delete, data: { confirm: 'Are you sure?' } %>
 <button class="btn-grey" style="margin-left:10%;color:white"><%= link_to 'Back', gallery_index_url %></button>

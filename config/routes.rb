@@ -10,11 +10,7 @@ Rails.application.routes.draw do
   post   'admin/login'   => 'admin#create'
   post 'admin/logout' => 'admin#destroy'
   get 'admin/logout'
-
-  namespace :api do
-    namespace :v1 do
-      post :orders, to: 'orders#create'
-    end
-  end
+  get "orders/index"
+  post "orders/index", to: 'orders#create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
