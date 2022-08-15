@@ -3,9 +3,9 @@
 one:
   amount_cents: 1
   payment_method: 1
-  customer: one
+  user: one
 
 two:
   amount_cents: 1
   payment_method: 1
-  customer: two
+  user: two

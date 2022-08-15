@@ -1,7 +1,7 @@
 class Payment < ApplicationRecord
   attr_accessor :credit_card_number, :credit_card_exp_month, :credit_card_exp_year, :credit_card_cvv
   belongs_to :order
-  before_validation :create_on_stripe
+  # before_validation :create_on_stripe
   def create_on_stripe
     token = get_token
     params = { amount: order.amount_cents, currency: 'usd', source: token}
