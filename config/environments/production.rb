@@ -124,4 +124,6 @@ Rails.application.configure do
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
+  config.action_mailer.default_url_options = { host: 'https://jewellary-app.herokuapp.com/' }
+
 end
