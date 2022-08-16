@@ -10,7 +10,7 @@
 						<h3> <%= product.name %></h3>
             <h3><%= product.description%></h3>
             <h4> <%= product.price %></h4>
-            <%= link_to 'Add to Cart', line_items_path(product_id: product),class: "btn-add" %>
+            <%= button_to 'Add to Cart', line_items_path(product_id: product),class: "cartButton" %>
 					</article>
       <% end %>
 				</section>

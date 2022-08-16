@@ -2020,3 +2020,10 @@ h1 {
   opacity: 0.9;
   text-decoration: none;
 }
+
+.cartButton {
+  background-color: #f4476b;
+  border: none;
+  height: 30px;
+  width: 100px;
+}
