@@ -82,5 +82,5 @@ test:
 production:
   <<: *default
   database: product_pg_production
-  username: product_pg
+  username: sg3
   password: <%= ENV['PRODUCT_PG_DATABASE_PASSWORD'] %>
