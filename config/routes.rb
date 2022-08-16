@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :homes
   get 'gallery/index'
   get 'gallery/search'
   resources :line_items
